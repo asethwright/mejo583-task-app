@@ -13,10 +13,17 @@
 
 <?php if (array_key_exists('updated', $_GET)) : ?>
 <div class="alert alert-success">
-  <p><strong>Update successful!</strong>. Your task was updated.</p>
+  <p><strong>Update successful!</strong> Your task was updated.</p>
 </div>
 <?php endif; ?>
 
+<?php if (array_key_exists('created', $_GET)) : ?>
+<div class="alert alert-info">
+  <p><strong>Task created!</strong> Your task was successfully created.</p>
+</div>
+<?php endif; ?>
+
+<a href="/delete.php?id=<?= $task['id']; ?>" class="btn btn-danger btn-xs pull-right btn-delete">Delete Task</a>
 <h1>Edit Task</h1>
 
 <form method="POST" action="/update.php">
